@@ -10,6 +10,9 @@
 		0D3425EB1C8C6C5900D32DE1 /* SemanticVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3425EA1C8C6C5900D32DE1 /* SemanticVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D3425F21C8C6C5900D32DE1 /* SemanticVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3425E71C8C6C5900D32DE1 /* SemanticVersion.framework */; };
 		0D3425F71C8C6C5900D32DE1 /* SemanticVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3425F61C8C6C5900D32DE1 /* SemanticVersionTests.swift */; };
+		0D3426171C8C703800D32DE1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3426161C8C703800D32DE1 /* Nimble.framework */; };
+		0D3426191C8C704400D32DE1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3426181C8C704400D32DE1 /* Quick.framework */; };
+		0D34261B1C8C719900D32DE1 /* SemanticVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		0D3425F11C8C6C5900D32DE1 /* SemanticVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemanticVersionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3425F61C8C6C5900D32DE1 /* SemanticVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticVersionTests.swift; sourceTree = "<group>"; };
 		0D3425F81C8C6C5900D32DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D3426161C8C703800D32DE1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
+		0D3426181C8C704400D32DE1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
+		0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3426191C8C704400D32DE1 /* Quick.framework in Frameworks */,
+				0D3426171C8C703800D32DE1 /* Nimble.framework in Frameworks */,
 				0D3425F21C8C6C5900D32DE1 /* SemanticVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +61,8 @@
 		0D3425DD1C8C6C5900D32DE1 = {
 			isa = PBXGroup;
 			children = (
+				0D3426181C8C704400D32DE1 /* Quick.framework */,
+				0D3426161C8C703800D32DE1 /* Nimble.framework */,
 				0D3425E91C8C6C5900D32DE1 /* SemanticVersion */,
 				0D3425F51C8C6C5900D32DE1 /* SemanticVersionTests */,
 				0D3425E81C8C6C5900D32DE1 /* Products */,
@@ -73,6 +83,7 @@
 			children = (
 				0D3425EA1C8C6C5900D32DE1 /* SemanticVersion.h */,
 				0D3425EC1C8C6C5900D32DE1 /* Info.plist */,
+				0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */,
 			);
 			path = SemanticVersion;
 			sourceTree = "<group>";
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D34261B1C8C719900D32DE1 /* SemanticVersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 		0D3425FC1C8C6C5900D32DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +331,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0D3425FD1C8C6C5900D32DE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -340,6 +355,11 @@
 		0D3425FF1C8C6C5900D32DE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SemanticVersionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersionTests;
@@ -350,6 +370,11 @@
 		0D3426001C8C6C5900D32DE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SemanticVersionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersionTests;
@@ -376,6 +401,7 @@
 				0D3425FD1C8C6C5900D32DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D3425FE1C8C6C5900D32DE1 /* Build configuration list for PBXNativeTarget "SemanticVersionTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +410,7 @@
 				0D3426001C8C6C5900D32DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
