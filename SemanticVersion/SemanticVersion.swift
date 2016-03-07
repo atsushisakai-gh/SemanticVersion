@@ -8,12 +8,12 @@
 
 import Foundation
 
-class SemanticVersion {
+public class SemanticVersion {
     let major: Int
     let minor: Int
     let patch: Int
     
-    init(string: String) {
+    init(_ string: String) {
         let regexp = Regexp("\\A(\\d+)\\.(\\d+)\\.(\\d+)\\Z")
         guard let match: String = regexp.matches(string)?.first else { fatalError("FIXME: handle error") }
         let array = match.componentsSeparatedByString(".").flatMap( {Int($0)})
@@ -21,7 +21,42 @@ class SemanticVersion {
         self.minor = array[1]
         self.patch = array[2]
     }
-    
-    // TODO: https://gist.github.com/takafumir/317b9325bebf677326b4
+}
 
+extension SemanticVersion : Equatable {}
+    
+public func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    return lhs.major == rhs.major
+        && lhs.minor == rhs.minor
+        && lhs.patch == rhs.patch
+}
+
+extension SemanticVersion : Comparable {}
+
+public func >(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    if lhs.major > rhs.major || lhs.minor > rhs.minor || lhs.patch > rhs.patch {
+        return true
+    }
+    return false
+}
+
+public func >=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    if lhs > rhs || lhs == rhs {
+        return true
+    }
+    return false
+}
+
+public func <(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    if lhs.major < rhs.major || lhs.minor < rhs.minor || lhs.patch < rhs.patch {
+        return true
+    }
+    return false
+}
+
+public func <=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    if lhs < rhs || lhs == rhs {
+        return true
+    }
+    return false
 }
