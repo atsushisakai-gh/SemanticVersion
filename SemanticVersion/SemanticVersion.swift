@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SemanticVersion {
+public class SemanticVersion {
     let major: Int
     let minor: Int
     let patch: Int
@@ -21,7 +21,12 @@ class SemanticVersion {
         self.minor = array[1]
         self.patch = array[2]
     }
-    
-    // TODO: https://gist.github.com/takafumir/317b9325bebf677326b4
+}
 
+extension SemanticVersion : Equatable {}
+    
+public func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    return lhs.major == rhs.major
+        && lhs.minor == rhs.minor
+        && lhs.patch == rhs.patch
 }
