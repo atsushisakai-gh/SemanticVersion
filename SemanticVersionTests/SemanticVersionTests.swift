@@ -21,11 +21,12 @@ class SemanticVersionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let object = SemanticVersion()
-        XCTAssertNotNil(object)
+    func testInitialize() {
+        let sv = SemanticVersion(string: "1.0.0") // FIXME
+        XCTAssertNotNil(sv)
+        XCTAssert(sv.major == 0)
+        XCTAssert(sv.minor == 0)
+        XCTAssert(sv.patch == 0)
     }
     
 }
