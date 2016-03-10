@@ -13,7 +13,7 @@ public class SemanticVersion {
     let minor: Int
     let patch: Int
     
-    init(_ string: String) {
+    public init(_ string: String) {
         let regexp = Regexp("\\A(\\d+)\\.(\\d+)\\.(\\d+)\\Z")
         guard let match: String = regexp.matches(string)?.first else { fatalError("FIXME: handle error") }
         let array = match.componentsSeparatedByString(".").flatMap( {Int($0)})
