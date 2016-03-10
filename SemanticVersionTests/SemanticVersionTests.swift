@@ -43,7 +43,22 @@ class SemanticVersionTests: XCTestCase {
         let rhs_patch = SemanticVersion("1.0.1")
         XCTAssertFalse(lhs == rhs_patch)
     }
-    
+
+    func testNotEqual() {
+        let lhs = SemanticVersion("1.0.0")
+        let rhs = SemanticVersion("1.0.0")
+        XCTAssertFalse(lhs != rhs)
+        
+        let rhs_major = SemanticVersion("2.0.0")
+        XCTAssertTrue(lhs != rhs_major)
+        
+        let rhs_minor = SemanticVersion("1.1.0")
+        XCTAssertTrue(lhs != rhs_minor)
+        
+        let rhs_patch = SemanticVersion("1.0.1")
+        XCTAssertTrue(lhs != rhs_patch)
+    }
+
     func testGreaterThan() {
         var lhs: SemanticVersion
         var rhs: SemanticVersion

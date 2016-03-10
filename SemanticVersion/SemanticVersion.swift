@@ -24,11 +24,17 @@ public class SemanticVersion {
 }
 
 extension SemanticVersion : Equatable {}
-    
+
 public func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     return lhs.major == rhs.major
         && lhs.minor == rhs.minor
         && lhs.patch == rhs.patch
+}
+
+public func !=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+    return lhs.major != rhs.major
+        || lhs.minor != rhs.minor
+        || lhs.patch != rhs.patch
 }
 
 extension SemanticVersion : Comparable {}
