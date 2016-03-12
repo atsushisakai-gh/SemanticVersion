@@ -22,11 +22,37 @@ class SemanticVersionTests: XCTestCase {
     }
 
     func testInitialize() {
-        let sv = SemanticVersion("1.0.0") // FIXME
+        let sv = SemanticVersion("1.0.0")
         XCTAssertNotNil(sv)
         XCTAssert(sv.major == 1)
         XCTAssert(sv.minor == 0)
         XCTAssert(sv.patch == 0)
+
+        let svWithPre = SemanticVersion("1.0.0-rc.1")
+        XCTAssertNotNil(svWithPre)
+        XCTAssert(svWithPre.major == 1)
+        XCTAssert(svWithPre.minor == 0)
+        XCTAssert(svWithPre.patch == 0)
+        XCTAssert(svWithPre.prereleaseBase == "rc")
+        XCTAssert(svWithPre.prereleaseNumber == 1)
+
+        let svWithPreNoNum = SemanticVersion("1.0.0-rc")
+        XCTAssertNotNil(svWithPreNoNum)
+        XCTAssert(svWithPreNoNum.major == 1)
+        XCTAssert(svWithPreNoNum.minor == 0)
+        XCTAssert(svWithPreNoNum.patch == 0)
+        XCTAssert(svWithPreNoNum.prereleaseBase == "rc")
+        XCTAssert(svWithPreNoNum.prereleaseNumber == nil)
+        XCTAssert(svWithPreNoNum.build == nil)
+
+        let svWithBuild = SemanticVersion("1.0.0-rc.1+build.1")
+        XCTAssertNotNil(svWithBuild)
+        XCTAssert(svWithBuild.major == 1)
+        XCTAssert(svWithBuild.minor == 0)
+        XCTAssert(svWithBuild.patch == 0)
+        XCTAssert(svWithBuild.prereleaseBase == "rc")
+        XCTAssert(svWithBuild.prereleaseNumber == 1)
+        XCTAssert(svWithBuild.build == "build.1")
     }
 
     func testEqual() {
@@ -152,20 +178,145 @@ class SemanticVersionTests: XCTestCase {
     }
 
     // MARK: PreRelease
-//    func testPrereleaseEqual() {
-//        var lhs: SemanticVersion
-//        var rhs: SemanticVersion
-//
-//        lhs = SemanticVersion("1.0.0")
-//        rhs = SemanticVersion("1.0.0-alpha")
-//        XCTAssertFalse(lhs == rhs)
-//
-//        lhs = SemanticVersion("1.0.0-alpha")
-//        rhs = SemanticVersion("1.0.0-alpha.1")
-//        XCTAssertFalse(lhs == rhs)
-//
-//        lhs = SemanticVersion("1.0.0-alpha.1")
-//        rhs = SemanticVersion("1.0.0-alpha.1")
-//        XCTAssertFalse(lhs == rhs)
-//    }
+    func testPrereleaseEqual() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0")
+        rhs = SemanticVersion("1.0.0-alpha")
+        XCTAssertFalse(lhs == rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs == rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs == rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        XCTAssertTrue(lhs == rhs)
+    }
+
+    func testPrereleaseNotEqual() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0")
+        rhs = SemanticVersion("1.0.0-alpha")
+        XCTAssertTrue(lhs != rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs != rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs != rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        XCTAssertFalse(lhs != rhs)
+    }
+
+    func testPrereleaseGreaterThan() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs > rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertFalse(lhs > rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha")
+        rhs = SemanticVersion("1.0.0")
+        XCTAssertTrue(lhs > rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha")
+        XCTAssertTrue(lhs > rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs > rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        XCTAssertTrue(lhs > rhs)
+    }
+
+    func testPrereleaseGreaterThanOrEqual() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertFalse(lhs >= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs >= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs >= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        XCTAssertTrue(lhs >= rhs)
+    }
+
+    func testPrereleaseLessThan() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs < rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs < rhs)
+
+        lhs = SemanticVersion("1.0.0")
+        rhs = SemanticVersion("1.0.0-alpha")
+        XCTAssertTrue(lhs < rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs < rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertTrue(lhs < rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertTrue(lhs < rhs)
+    }
+
+    func testPrereleaseLessThanOrEqual() {
+        var lhs: SemanticVersion
+        var rhs: SemanticVersion
+
+        lhs = SemanticVersion("1.0.0-alpha.2")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertFalse(lhs <= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.1")
+        XCTAssertTrue(lhs <= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertTrue(lhs <= rhs)
+
+        lhs = SemanticVersion("1.0.0-alpha.1+build.1")
+        rhs = SemanticVersion("1.0.0-alpha.2")
+        XCTAssertTrue(lhs <= rhs)
+    }
 }
