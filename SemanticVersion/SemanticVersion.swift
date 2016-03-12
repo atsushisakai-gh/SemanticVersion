@@ -14,9 +14,8 @@ public class SemanticVersion {
     let patch: Int
 
     public init(_ string: String) {
-        let regexp = Regexp("^([0-9]+\\.[0-9]+\\.[0-9]+)(?:-([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?(?:\\+([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?$")
-        guard let match: String = regexp.matches(string)?.first else { fatalError("FIXME: handle error") }
-        let array = match.componentsSeparatedByString(".").flatMap({ Int($0) })
+        let matched = SemanticVersionParser.parse(string)
+        let array = matched.componentsSeparatedByString(".").flatMap({ Int($0) })
         self.major = array[0]
         self.minor = array[1]
         self.patch = array[2]
