@@ -12,55 +12,55 @@ public class SemanticVersion {
     let major: Int
     let minor: Int
     let patch: Int
-    
+
     public init(_ string: String) {
-        let regexp = Regexp("\\A(\\d+)\\.(\\d+)\\.(\\d+)\\Z")
+        let regexp = Regexp("^([0-9]+\\.[0-9]+\\.[0-9]+)(?:-([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?(?:\\+([0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*))?$")
         guard let match: String = regexp.matches(string)?.first else { fatalError("FIXME: handle error") }
-        let array = match.componentsSeparatedByString(".").flatMap( {Int($0)})
+        let array = match.componentsSeparatedByString(".").flatMap({ Int($0) })
         self.major = array[0]
         self.minor = array[1]
         self.patch = array[2]
     }
 }
 
-extension SemanticVersion : Equatable {}
+extension SemanticVersion: Equatable { }
 
-public func ==(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func == (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     return lhs.major == rhs.major
-        && lhs.minor == rhs.minor
-        && lhs.patch == rhs.patch
+    && lhs.minor == rhs.minor
+    && lhs.patch == rhs.patch
 }
 
-public func !=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func != (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     return lhs.major != rhs.major
-        || lhs.minor != rhs.minor
-        || lhs.patch != rhs.patch
+    || lhs.minor != rhs.minor
+    || lhs.patch != rhs.patch
 }
 
-extension SemanticVersion : Comparable {}
+extension SemanticVersion: Comparable { }
 
-public func >(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func > (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     if lhs.major > rhs.major || lhs.minor > rhs.minor || lhs.patch > rhs.patch {
         return true
     }
     return false
 }
 
-public func >=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func >= (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     if lhs > rhs || lhs == rhs {
         return true
     }
     return false
 }
 
-public func <(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func < (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     if lhs.major < rhs.major || lhs.minor < rhs.minor || lhs.patch < rhs.patch {
         return true
     }
     return false
 }
 
-public func <=(lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
+public func <= (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     if lhs < rhs || lhs == rhs {
         return true
     }
