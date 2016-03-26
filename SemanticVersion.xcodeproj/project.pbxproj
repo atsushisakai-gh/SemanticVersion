@@ -16,6 +16,9 @@
 		0D34261E1C8C880300D32DE1 /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261D1C8C880300D32DE1 /* Regexp.swift */; };
 		0D3426201C8C8B9400D32DE1 /* RegexpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */; };
 		0D3426211C8C8C1F00D32DE1 /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261D1C8C880300D32DE1 /* Regexp.swift */; };
+		0DCEEC7D1C9409F000504CDE /* SemanticVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */; };
+		0DCEEC7F1C940CC900504CDE /* SemanticVersionParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */; };
+		0DCEEC811C940F7800504CDE /* SemanticVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersion.swift; sourceTree = "<group>"; };
 		0D34261D1C8C880300D32DE1 /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
 		0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpTests.swift; sourceTree = "<group>"; };
+		0DCA81941CA640490076F9EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParser.swift; sourceTree = "<group>"; };
+		0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		0D3425DD1C8C6C5900D32DE1 = {
 			isa = PBXGroup;
 			children = (
+				0DCA81941CA640490076F9EB /* MyPlayground.playground */,
 				0D3426181C8C704400D32DE1 /* Quick.framework */,
 				0D3426161C8C703800D32DE1 /* Nimble.framework */,
 				0D3425E91C8C6C5900D32DE1 /* SemanticVersion */,
@@ -89,6 +96,7 @@
 				0D3425EC1C8C6C5900D32DE1 /* Info.plist */,
 				0D3425EA1C8C6C5900D32DE1 /* SemanticVersion.h */,
 				0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */,
+				0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */,
 				0D34261C1C8C87F500D32DE1 /* Utils */,
 			);
 			path = SemanticVersion;
@@ -100,6 +108,7 @@
 				0D3425F81C8C6C5900D32DE1 /* Info.plist */,
 				0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */,
 				0D3425F61C8C6C5900D32DE1 /* SemanticVersionTests.swift */,
+				0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */,
 			);
 			path = SemanticVersionTests;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D34261E1C8C880300D32DE1 /* Regexp.swift in Sources */,
+				0DCEEC7D1C9409F000504CDE /* SemanticVersionParser.swift in Sources */,
 				0D34261B1C8C719900D32DE1 /* SemanticVersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3426201C8C8B9400D32DE1 /* RegexpTests.swift in Sources */,
+				0DCEEC811C940F7800504CDE /* SemanticVersionParser.swift in Sources */,
 				0D3425F71C8C6C5900D32DE1 /* SemanticVersionTests.swift in Sources */,
+				0DCEEC7F1C940CC900504CDE /* SemanticVersionParserTests.swift in Sources */,
 				0D3426211C8C8C1F00D32DE1 /* Regexp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
