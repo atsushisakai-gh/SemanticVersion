@@ -12,30 +12,28 @@ public class SemanticVersion {
     let major: Int
     let minor: Int
     let patch: Int
-    var prereleaseBase: String? = nil
-    var prereleaseNumber: Int? = nil
+    var prerelease: String? = nil
     var build: String? = nil
 
     public init(_ string: String) {
         let matched = SemanticVersionParser.parse(string)
-        let structures: [String] = matched.componentsSeparatedByString("-").flatMap({ String($0) })
-        let versions = structures[0].componentsSeparatedByString(".").flatMap({ Int($0) })
+
+        let full_versions: [String] = matched.componentsSeparatedByString("-").flatMap({ String($0) })
+        let versions = full_versions[0].componentsSeparatedByString(".").flatMap({ Int($0) })
         self.major = versions[0]
         self.minor = versions[1]
         self.patch = versions[2]
-        if structures.count < 2 {
+        if full_versions.count < 2 {
             return
         }
 
-        let specials: [String] = structures[1].componentsSeparatedByString("+").flatMap({ String($0) })
-        let prereleases = specials[0].componentsSeparatedByString(".")
-        self.prereleaseBase = String(prereleases[0])
-        self.prereleaseNumber = prereleases.count >= 2 ? Int(prereleases[1]) : nil
-        if specials.count < 2 {
+        let additional: [String] = full_versions[1].componentsSeparatedByString("+").flatMap({ String($0) })
+        self.prerelease = additional[0]
+        if additional.count < 2 {
             return
         }
 
-        self.build = specials[1]
+        self.build = additional[1]
     }
 }
 
@@ -45,8 +43,7 @@ public func == (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     return lhs.major == rhs.major
     && lhs.minor == rhs.minor
     && lhs.patch == rhs.patch
-    && lhs.prereleaseBase == rhs.prereleaseBase
-    && lhs.prereleaseNumber == rhs.prereleaseNumber
+    && lhs.prerelease == rhs.prerelease
 }
 
 public func != (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
@@ -58,7 +55,8 @@ public func > (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
         return true
     }
 
-    if lhs.prereleaseBase > rhs.prereleaseBase || lhs.prereleaseNumber > rhs.prereleaseNumber {
+    // FIXME:
+    if lhs.prerelease > rhs.prerelease {
         return true
     }
     return false
