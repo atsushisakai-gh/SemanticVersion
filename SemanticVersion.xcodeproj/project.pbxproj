@@ -43,6 +43,7 @@
 		0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersion.swift; sourceTree = "<group>"; };
 		0D34261D1C8C880300D32DE1 /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
 		0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpTests.swift; sourceTree = "<group>"; };
+		0DCA81941CA640490076F9EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParser.swift; sourceTree = "<group>"; };
 		0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +72,7 @@
 		0D3425DD1C8C6C5900D32DE1 = {
 			isa = PBXGroup;
 			children = (
+				0DCA81941CA640490076F9EB /* MyPlayground.playground */,
 				0D3426181C8C704400D32DE1 /* Quick.framework */,
 				0D3426161C8C703800D32DE1 /* Nimble.framework */,
 				0D3425E91C8C6C5900D32DE1 /* SemanticVersion */,
