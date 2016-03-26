@@ -39,7 +39,7 @@ public class SemanticVersion {
     }
 }
 
-extension SemanticVersion: Equatable { }
+extension SemanticVersion: Comparable { }
 
 public func == (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     return lhs.major == rhs.major
@@ -50,14 +50,8 @@ public func == (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
 }
 
 public func != (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
-    return lhs.major != rhs.major
-    || lhs.minor != rhs.minor
-    || lhs.patch != rhs.patch
-    || lhs.prereleaseBase != rhs.prereleaseBase
-    || lhs.prereleaseNumber != rhs.prereleaseNumber
+    return !(lhs == rhs)
 }
-
-extension SemanticVersion: Comparable { }
 
 public func > (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
     if lhs.major > rhs.major || lhs.minor > rhs.minor || lhs.patch > rhs.patch {
@@ -78,19 +72,9 @@ public func >= (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
 }
 
 public func < (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
-    if lhs.major < rhs.major || lhs.minor < rhs.minor || lhs.patch < rhs.patch {
-        return true
-    }
-
-    if lhs.prereleaseBase < rhs.prereleaseBase || lhs.prereleaseNumber < rhs.prereleaseNumber {
-        return true
-    }
-    return false
+    return !(lhs >= rhs)
 }
 
 public func <= (lhs: SemanticVersion, rhs: SemanticVersion) -> Bool {
-    if lhs < rhs || lhs == rhs {
-        return true
-    }
-    return false
+    return !(lhs > rhs)
 }
