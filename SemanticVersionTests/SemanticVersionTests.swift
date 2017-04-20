@@ -2,12 +2,11 @@
 //  SemanticVersionTests.swift
 //  SemanticVersionTests
 //
-//  Created by 酒井篤 on 2016/03/06.
+//  Created by atsushi.sakai on 2016/03/06.
 //  Copyright © 2016年 Atsushi Sakai. All rights reserved.
 //
 
 import XCTest
-@testable import SemanticVersion
 
 class SemanticVersionTests: XCTestCase {
 

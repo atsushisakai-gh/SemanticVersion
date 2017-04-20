@@ -2,7 +2,7 @@
 //  Regexp.swift
 //  SemanticVersion
 //
-//  Created by 酒井篤 on 2016/03/07.
+//  Created by atsushi.sakai on 2016/03/07.
 //  Copyright © 2016年 Atsushi Sakai. All rights reserved.
 //
 
@@ -24,27 +24,27 @@ class Regexp {
         }
     }
     
-    func isMatch(input: String) -> Bool {
+    func isMatch(_ input: String) -> Bool {
         let inputAsNSString = input as NSString
-        let matches = self.internalRegexp.matchesInString(
-            input,
+        let matches = self.internalRegexp.matches(
+            in: input,
             options: [],
             range:NSMakeRange(0, inputAsNSString.length)
         )
         return matches.count > 0
     }
     
-    func matches(input: String) -> [String]? {
+    func matches(_ input: String) -> [String]? {
         if self.isMatch(input) {
             let inputAsNSString = input as NSString
-            let matches = self.internalRegexp.matchesInString(
-                input,
+            let matches = self.internalRegexp.matches(
+                in: input,
                 options: [],
                 range:NSMakeRange(0, inputAsNSString.length)
             )
             var results: [String] = []
             for i in 0 ..< matches.count {
-                results.append( inputAsNSString.substringWithRange(matches[i].range) )
+                results.append( inputAsNSString.substring(with: matches[i].range) )
             }
             return results
         }

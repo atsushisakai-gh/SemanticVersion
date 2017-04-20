@@ -2,7 +2,7 @@
 //  SemanticVersionParserTests.swift
 //  SemanticVersion
 //
-//  Created by 酒井篤 on 2016/03/12.
+//  Created by atsushi.sakai on 2016/03/12.
 //  Copyright © 2016年 Atsushi Sakai. All rights reserved.
 //
 

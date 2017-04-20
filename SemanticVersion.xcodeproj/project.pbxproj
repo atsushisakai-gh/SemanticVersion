@@ -8,17 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0D3425EB1C8C6C5900D32DE1 /* SemanticVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3425EA1C8C6C5900D32DE1 /* SemanticVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D3425F21C8C6C5900D32DE1 /* SemanticVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3425E71C8C6C5900D32DE1 /* SemanticVersion.framework */; };
 		0D3425F71C8C6C5900D32DE1 /* SemanticVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3425F61C8C6C5900D32DE1 /* SemanticVersionTests.swift */; };
-		0D3426171C8C703800D32DE1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3426161C8C703800D32DE1 /* Nimble.framework */; };
-		0D3426191C8C704400D32DE1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3426181C8C704400D32DE1 /* Quick.framework */; };
 		0D34261B1C8C719900D32DE1 /* SemanticVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */; };
 		0D34261E1C8C880300D32DE1 /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261D1C8C880300D32DE1 /* Regexp.swift */; };
 		0D3426201C8C8B9400D32DE1 /* RegexpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */; };
-		0D3426211C8C8C1F00D32DE1 /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261D1C8C880300D32DE1 /* Regexp.swift */; };
 		0DCEEC7D1C9409F000504CDE /* SemanticVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */; };
 		0DCEEC7F1C940CC900504CDE /* SemanticVersionParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */; };
-		0DCEEC811C940F7800504CDE /* SemanticVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */; };
+		4F78DD461EA8E61E005C3573 /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261D1C8C880300D32DE1 /* Regexp.swift */; };
+		4F78DD471EA8E621005C3573 /* SemanticVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */; };
+		4F78DD481EA8E627005C3573 /* SemanticVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,20 +30,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D3425E71C8C6C5900D32DE1 /* SemanticVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemanticVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3425EA1C8C6C5900D32DE1 /* SemanticVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemanticVersion.h; sourceTree = "<group>"; };
 		0D3425EC1C8C6C5900D32DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D3425F11C8C6C5900D32DE1 /* SemanticVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemanticVersionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3425F61C8C6C5900D32DE1 /* SemanticVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticVersionTests.swift; sourceTree = "<group>"; };
 		0D3425F81C8C6C5900D32DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D3426161C8C703800D32DE1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
-		0D3426181C8C704400D32DE1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
 		0D34261A1C8C719900D32DE1 /* SemanticVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersion.swift; sourceTree = "<group>"; };
 		0D34261D1C8C880300D32DE1 /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
 		0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpTests.swift; sourceTree = "<group>"; };
-		0DCA81941CA640490076F9EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParser.swift; sourceTree = "<group>"; };
 		0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParserTests.swift; sourceTree = "<group>"; };
+		4FB43BFE1EA8E860003AFA4E /* SemanticVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SemanticVersion.framework; path = "/Users/atsushi.sakai/Workspace/SemanticVersion/build/Debug-iphoneos/SemanticVersion.framework"; sourceTree = "<absolute>"; };
+		4FB43BFF1EA8E860003AFA4E /* SemanticVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SemanticVersionTests.xctest; path = "/Users/atsushi.sakai/Workspace/SemanticVersion/build/Debug-iphoneos/SemanticVersionTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D3426191C8C704400D32DE1 /* Quick.framework in Frameworks */,
-				0D3426171C8C703800D32DE1 /* Nimble.framework in Frameworks */,
-				0D3425F21C8C6C5900D32DE1 /* SemanticVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,22 +64,9 @@
 		0D3425DD1C8C6C5900D32DE1 = {
 			isa = PBXGroup;
 			children = (
-				0DCA81941CA640490076F9EB /* MyPlayground.playground */,
-				0D3426181C8C704400D32DE1 /* Quick.framework */,
-				0D3426161C8C703800D32DE1 /* Nimble.framework */,
 				0D3425E91C8C6C5900D32DE1 /* SemanticVersion */,
 				0D3425F51C8C6C5900D32DE1 /* SemanticVersionTests */,
-				0D3425E81C8C6C5900D32DE1 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		0D3425E81C8C6C5900D32DE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0D3425E71C8C6C5900D32DE1 /* SemanticVersion.framework */,
-				0D3425F11C8C6C5900D32DE1 /* SemanticVersionTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0D3425E91C8C6C5900D32DE1 /* SemanticVersion */ = {
@@ -150,7 +129,7 @@
 			);
 			name = SemanticVersion;
 			productName = SemanticVersion;
-			productReference = 0D3425E71C8C6C5900D32DE1 /* SemanticVersion.framework */;
+			productReference = 4FB43BFE1EA8E860003AFA4E /* SemanticVersion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0D3425F01C8C6C5900D32DE1 /* SemanticVersionTests */ = {
@@ -168,7 +147,7 @@
 			);
 			name = SemanticVersionTests;
 			productName = SemanticVersionTests;
-			productReference = 0D3425F11C8C6C5900D32DE1 /* SemanticVersionTests.xctest */;
+			productReference = 4FB43BFF1EA8E860003AFA4E /* SemanticVersionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -178,14 +157,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Atsushi Sakai";
 				TargetAttributes = {
 					0D3425E61C8C6C5900D32DE1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 					};
 					0D3425F01C8C6C5900D32DE1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -197,7 +178,7 @@
 				en,
 			);
 			mainGroup = 0D3425DD1C8C6C5900D32DE1;
-			productRefGroup = 0D3425E81C8C6C5900D32DE1 /* Products */;
+			productRefGroup = 0D3425DD1C8C6C5900D32DE1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -239,11 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F78DD481EA8E627005C3573 /* SemanticVersion.swift in Sources */,
 				0D3426201C8C8B9400D32DE1 /* RegexpTests.swift in Sources */,
-				0DCEEC811C940F7800504CDE /* SemanticVersionParser.swift in Sources */,
+				4F78DD471EA8E621005C3573 /* SemanticVersionParser.swift in Sources */,
 				0D3425F71C8C6C5900D32DE1 /* SemanticVersionTests.swift in Sources */,
+				4F78DD461EA8E61E005C3573 /* Regexp.swift in Sources */,
 				0DCEEC7F1C940CC900504CDE /* SemanticVersionParserTests.swift in Sources */,
-				0D3426211C8C8C1F00D32DE1 /* Regexp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +253,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -300,6 +284,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -319,8 +304,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +327,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -351,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -362,6 +352,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -369,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -379,6 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -394,6 +387,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -409,6 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioboo.SemanticVersionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
