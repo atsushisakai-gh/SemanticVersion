@@ -39,8 +39,8 @@
 		0D34261F1C8C8B9400D32DE1 /* RegexpTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpTests.swift; sourceTree = "<group>"; };
 		0DCEEC7C1C9409F000504CDE /* SemanticVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParser.swift; sourceTree = "<group>"; };
 		0DCEEC7E1C940CC900504CDE /* SemanticVersionParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemanticVersionParserTests.swift; sourceTree = "<group>"; };
-		4FB43BFE1EA8E860003AFA4E /* SemanticVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SemanticVersion.framework; path = "/Users/atsushi.sakai/Workspace/SemanticVersion/build/Debug-iphoneos/SemanticVersion.framework"; sourceTree = "<absolute>"; };
-		4FB43BFF1EA8E860003AFA4E /* SemanticVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SemanticVersionTests.xctest; path = "/Users/atsushi.sakai/Workspace/SemanticVersion/build/Debug-iphoneos/SemanticVersionTests.xctest"; sourceTree = "<absolute>"; };
+		4FA9E62D1EA8EC89000D3E9E /* SemanticVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemanticVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FA9E62E1EA8EC89000D3E9E /* SemanticVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemanticVersionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,8 @@
 			children = (
 				0D3425E91C8C6C5900D32DE1 /* SemanticVersion */,
 				0D3425F51C8C6C5900D32DE1 /* SemanticVersionTests */,
+				4FA9E62D1EA8EC89000D3E9E /* SemanticVersion.framework */,
+				4FA9E62E1EA8EC89000D3E9E /* SemanticVersionTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,7 +131,7 @@
 			);
 			name = SemanticVersion;
 			productName = SemanticVersion;
-			productReference = 4FB43BFE1EA8E860003AFA4E /* SemanticVersion.framework */;
+			productReference = 4FA9E62D1EA8EC89000D3E9E /* SemanticVersion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0D3425F01C8C6C5900D32DE1 /* SemanticVersionTests */ = {
@@ -147,7 +149,7 @@
 			);
 			name = SemanticVersionTests;
 			productName = SemanticVersionTests;
-			productReference = 4FB43BFF1EA8E860003AFA4E /* SemanticVersionTests.xctest */;
+			productReference = 4FA9E62E1EA8EC89000D3E9E /* SemanticVersionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -324,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
