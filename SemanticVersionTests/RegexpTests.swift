@@ -2,7 +2,7 @@
 //  RegexpTests.swift
 //  SemanticVersion
 //
-//  Created by 酒井篤 on 2016/03/07.
+//  Created by atsushi.sakai on 2016/03/07.
 //  Copyright © 2016年 Atsushi Sakai. All rights reserved.
 //
 
@@ -43,7 +43,7 @@ class RegexpTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }
